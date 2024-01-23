@@ -1,0 +1,558 @@
+apiiit-rkv@srinu:~$ mysql -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 88
+Server version: 5.7.39-0ubuntu0.18.04.2 (Ubuntu)
+
+Copyright (c) 2000, 2022, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> create database library;
+Query OK, 1 row affected (0.05 sec)
+
+mysql> use library;
+Database changed
+mysql> create table student(first varchar(30),last varchar(30),username varchar(30),password varchar(10),email varchar(50),phone char(10));
+Query OK, 0 rows affected (0.72 sec)
+
+mysql> insert into student values("srinu","vasulu","srinu12","srinu@123","srinu122@gmail.com","9381429278");
+Query OK, 1 row affected (0.13 sec)
+
+mysql> select * from student;
++-------+--------+----------+-----------+--------------------+------------+
+| first | last   | username | password  | email              | phone      |
++-------+--------+----------+-----------+--------------------+------------+
+| srinu | vasulu | srinu12  | srinu@123 | srinu122@gmail.com | 9381429278 |
++-------+--------+----------+-----------+--------------------+------------+
+1 row in set (0.00 sec)
+
+mysql> select * from student;
++-------+--------+----------+-----------+--------------------+------------+
+| first | last   | username | password  | email              | phone      |
++-------+--------+----------+-----------+--------------------+------------+
+| srinu | vasulu | srinu12  | srinu@123 | srinu122@gmail.com | 9381429278 |
++-------+--------+----------+-----------+--------------------+------------+
+1 row in set (0.01 sec)
+
+mysql> select * from student;
++-------+--------+----------+-----------+--------------------+------------+
+| first | last   | username | password  | email              | phone      |
++-------+--------+----------+-----------+--------------------+------------+
+| srinu | vasulu | srinu12  | srinu@123 | srinu122@gmail.com | 9381429278 |
++-------+--------+----------+-----------+--------------------+------------+
+1 row in set (0.00 sec)
+
+mysql> select * from student;
++---------+--------+----------+------------+--------------------+------------+
+| first   | last   | username | password   | email              | phone      |
++---------+--------+----------+------------+--------------------+------------+
+| srinu   | vasulu | srinu12  | srinu@123  | srinu122@gmail.com | 9381429278 |
+| praveen | kumar  | pk123    | praveen123 | praveen@gmail.com  | 6281431747 |
++---------+--------+----------+------------+--------------------+------------+
+2 rows in set (0.00 sec)
+
+mysql> mysql> select * from student;
++---------+--------+----------+------------+--------------------+------------+
+| first   | last   | username | password   | email              | phone      |
++---------+--------+----------+------------+--------------------+------------+
+| srinu   | vasulu | srinu12  | srinu@123  | srinu122@gmail.com | 9381429278 |
+| praveen | kumar  | pk123    | praveen123 | praveen@gmail.com  | 6281431747 |
++---------+--------+----------+------------+--------------------+------------+
+2 rows in set (0.00 sec)
+
+mysql> select * from student;
++---------+--------+----------+------------+--------------------+------------+
+| first   | last   | username | password   | email              | phone      |
++---------+--------+----------+------------+--------------------+------------+
+| srinu   | vasulu | srinu12  | srinu@123  | srinu122@gmail.com | 9381429278 |
+| praveen | kumar  | pk123    | praveen123 | praveen@gmail.com  | 6281431747 |
++---------+--------+----------+------------+--------------------+------------+
+2 rows in set (0.00 sec)
+
+mysql> select username from student;
++----------+
+| username |
++----------+
+| srinu12  |
+| pk123    |
++----------+
+2 rows in set (0.00 sec)
+
+mysql> select * from student;
++---------+--------+----------+------------+--------------------+------------+
+| first   | last   | username | password   | email              | phone      |
++---------+--------+----------+------------+--------------------+------------+
+| srinu   | vasulu | srinu12  | srinu@123  | srinu122@gmail.com | 9381429278 |
+| praveen | kumar  | pk123    | praveen123 | praveen@gmail.com  | 6281431747 |
+| mahesh  | mahi   | mahinaik | mahesh123  | mahesh@gmail.com   | 7897897890 |
+| john    | basha  | john     | john12     | john@gmail.com     | 9879879876 |
++---------+--------+----------+------------+--------------------+------------+
+4 rows in set (0.00 sec)
+
+mysql> create table books(bid varchar(15),bookname varchar(60),author varcharmysql> create table books(bid varchar(15),bookname varchar(60),author varmysql> select * f
+mysql> ;
+ERROR: 
+No query specified
+
+mysql> create table books(bid char(7),bookname varchar(60),author varchar(20),edition varchar(20),status varchar(15),quantity int,department char(18));
+Query OK, 0 rows affected (0.42 sec)
+
+mysql> insert into books values('1','Data Structures Using C','Reema Thareja','2','available',20,'CSE');
+Query OK, 1 row affected (0.23 sec)
+
+mysql> select * from books;
++------+-------------------------+---------------+---------+-----------+----------+------------+
+| bid  | bookname                | author        | edition | status    | quantity | department |
++------+-------------------------+---------------+---------+-----------+----------+------------+
+| 1    | Data Structures Using C | Reema Thareja | 2       | available |       20 | CSE        |
++------+-------------------------+---------------+---------+-----------+----------+------------+
+1 row in set (0.10 sec)
+
+mysql> insert into books values('2','python','Reema Thareja','1','available',10,'CSE');
+Query OK, 1 row affected (0.17 sec)
+
+mysql> select * from books;
++------+-------------------------+---------------+---------+-----------+----------+------------+
+| bid  | bookname                | author        | edition | status    | quantity | department |
++------+-------------------------+---------------+---------+-----------+----------+------------+
+| 1    | Data Structures Using C | Reema Thareja | 2       | available |       20 | CSE        |
+| 2    | python                  | Reema Thareja | 1       | available |       10 | CSE        |
++------+-------------------------+---------------+---------+-----------+----------+------------+
+2 rows in set (0.00 sec)
+
+mysql> select * from books;
++------+-------------------------+---------------+---------+-----------+----------+------------+
+| bid  | bookname                | author        | edition | status    | quantity | department |
++------+-------------------------+---------------+---------+-----------+----------+------------+
+| 1    | Data Structures Using C | Reema Thareja | 2       | available |       20 | CSE        |
+| 2    | python                  | Reema Thareja | 1       | available |       10 | CSE        |
++------+-------------------------+---------------+---------+-----------+----------+------------+
+2 rows in set (0.00 sec)
+
+mysql> create table admin(id char(10),admin_name varchar(20),username varchar(20),password varchar(10),email varchar(50),phone char(10));
+Query OK, 0 rows affected (0.80 sec)
+
+mysql> insert into admin values('sp123','kanth','kanth12','kanth@123','kanth12@gmail.com','9381629345');
+Query OK, 1 row affected (0.12 sec)
+
+mysql> select * from admin;
++-------+------------+----------+-----------+-------------------+------------+
+| id    | admin_name | username | password  | email             | phone      |
++-------+------------+----------+-----------+-------------------+------------+
+| sp123 | kanth      | kanth12  | kanth@123 | kanth12@gmail.com | 9381629345 |
++-------+------------+----------+-----------+-------------------+------------+
+1 row in set (0.01 sec)
+
+mysql> select * from admin;
++-------+------------+----------+-----------+-------------------+------------+
+| id    | admin_name | username | password  | email             | phone      |
++-------+------------+----------+-----------+-------------------+------------+
+| sp123 | kanth      | kanth12  | kanth@123 | kanth12@gmail.com | 9381629345 |
+| sp143 | sandeep    | sandy    | sandeep   | sandy@gmail.com   | 9876547659 |
++-------+------------+----------+-----------+-------------------+------------+
+2 rows in set (0.01 sec)
+
+mysql> create table  studrequest(bookname varchar(50),author_name varchar(18),edition int);
+Query OK, 0 rows affected (0.38 sec)
+
+mysql> select * from studrequest;
+Empty set (0.00 sec)
+
+mysql> select * from studrequest;
+Empty set (0.00 sec)
+
+mysql> select * from studrequest;
++----------+-------------+---------+
+| bookname | author_name | edition |
++----------+-------------+---------+
+| java     | james       |       2 |
++----------+-------------+---------+
+1 row in set (0.00 sec)
+
+mysql> select * from books;
++------+-------------------------+---------------+---------+-----------+----------+------------+
+| bid  | bookname                | author        | edition | status    | quantity | department |
++------+-------------------------+---------------+---------+-----------+----------+------------+
+| 1    | Data Structures Using C | Reema Thareja | 2       | available |       20 | CSE        |
+| 2    | python                  | Reema Thareja | 1       | available |       10 | CSE        |
+| 3    |                         | M.Morris      | 5       | available |       12 | ECE        |
++------+-------------------------+---------------+---------+-----------+----------+------------+
+3 rows in set (0.00 sec)
+
+mysql> delete from books where bid='3';
+Query OK, 1 row affected (0.09 sec)
+
+mysql> select * from books;
++------+-------------------------+---------------+---------+-----------+----------+------------+
+| bid  | bookname                | author        | edition | status    | quantity | department |
++------+-------------------------+---------------+---------+-----------+----------+------------+
+| 1    | Data Structures Using C | Reema Thareja | 2       | available |       20 | CSE        |
+| 2    | python                  | Reema Thareja | 1       | available |       10 | CSE        |
++------+-------------------------+---------------+---------+-----------+----------+------------+
+2 rows in set (0.00 sec)
+
+mysql> select * from books;
++------+-------------------------+---------------+---------+-----------+----------+------------+
+| bid  | bookname                | author        | edition | status    | quantity | department |
++------+-------------------------+---------------+---------+-----------+----------+------------+
+| 1    | Data Structures Using C | Reema Thareja | 2       | available |       20 | CSE        |
+| 2    | python                  | Reema Thareja | 1       | available |       10 | CSE        |
+| 3    |                         | M.Morris      | 5       | available |       12 | ECE        |
++------+-------------------------+---------------+---------+-----------+----------+------------+
+3 rows in set (0.00 sec)
+
+mysql> delete from books where bid='3';
+Query OK, 1 row affected (0.06 sec)
+
+mysql> select * from books;
++------+-------------------------+---------------+---------+-----------+----------+------------+
+| bid  | bookname                | author        | edition | status    | quantity | department |
++------+-------------------------+---------------+---------+-----------+----------+------------+
+| 1    | Data Structures Using C | Reema Thareja | 2       | available |       20 | CSE        |
+| 2    | python                  | Reema Thareja | 1       | available |       10 | CSE        |
++------+-------------------------+---------------+---------+-----------+----------+------------+
+2 rows in set (0.00 sec)
+
+mysql> select * from studrequest;
++----------+-------------+---------+
+| bookname | author_name | edition |
++----------+-------------+---------+
+| java     | james       |       2 |
++----------+-------------+---------+
+1 row in set (0.00 sec)
+
+mysql> select * from studrequest;
++----------+-------------+---------+
+| bookname | author_name | edition |
++----------+-------------+---------+
+| java     | james       |       2 |
++----------+-------------+---------+
+1 row in set (0.00 sec)
+
+mysql> select * from studrequest;
++----------+-------------------+---------+
+| bookname | author_name       | edition |
++----------+-------------------+---------+
+| java     | james             |       2 |
+| FEC      | Charles Alexander |       5 |
++----------+-------------------+---------+
+2 rows in set (0.00 sec)
+
+mysql> select * from studrequest;
++-------------+-------------------+---------+
+| bookname    | author_name       | edition |
++-------------+-------------------+---------+
+| java        | james             |       2 |
+| FEC         | Charles Alexander |       5 |
+| Engg. Maths | B.S.Grewal        |      42 |
++-------------+-------------------+---------+
+3 rows in set (0.00 sec)
+
+mysql> 
+
+
+student@tmb:~$ mysql -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.0.32-0ubuntu0.22.04.2 (Ubuntu)
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use library;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> show tables;
++-------------------+
+| Tables_in_library |
++-------------------+
+| admin             |
+| books             |
+| comment           |
+| student           |
+| studrequest       |
++-------------------+
+5 rows in set (0.01 sec)
+
+mysql> select * from student;
++-------+-------+----------+-----------+-----------------+------------+
+| first | last  | username | password  | email           | phone      |
++-------+-------+----------+-----------+-----------------+------------+
+| boya  | srinu | srinu12  | Srinu@123 | srinu@gmail.com | 9381429278 |
++-------+-------+----------+-----------+-----------------+------------+
+1 row in set (0.02 sec)
+
+mysql> selct * from admin;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'selct * from admin' at line 1
+mysql> select * from admin;
++--------+------------+----------+-----------+-----------------+------------+
+| id     | admin_name | username | password  | email           | phone      |
++--------+------------+----------+-----------+-----------------+------------+
+| AD0123 | mohan      | mohan123 | Mohan@123 | mohan@gmail.com | 7093679099 |
++--------+------------+----------+-----------+-----------------+------------+
+1 row in set (0.02 sec)
+
+mysql> desc studrequest;
++-------------+-------------+------+-----+---------+----------------+
+| Field       | Type        | Null | Key | Default | Extra          |
++-------------+-------------+------+-----+---------+----------------+
+| bid         | int         | NO   | PRI | NULL    | auto_increment |
+| bookname    | varchar(30) | YES  |     | NULL    |                |
+| author_name | varchar(20) | YES  |     | NULL    |                |
+| edition     | int         | YES  |     | NULL    |                |
++-------------+-------------+------+-----+---------+----------------+
+4 rows in set (0.02 sec)
+
+mysql> select * from studrequest;
++-----+--------------------+-------------+---------+
+| bid | bookname           | author_name | edition |
++-----+--------------------+-------------+---------+
+|   1 | java               | felix       |       1 |
+|   2 | building materials | s.k.duggal  |       3 |
+|   3 | cn                 | cn          |       2 |
++-----+--------------------+-------------+---------+
+3 rows in set (0.00 sec)
+
+mysql> show tables;
++-------------------+
+| Tables_in_library |
++-------------------+
+| admin             |
+| books             |
+| comment           |
+| student           |
+| studrequest       |
++-------------------+
+5 rows in set (0.00 sec)
+
+mysql> student@pavan-kalyan:~$ sudo mysql -u root -p
+[sudo] password for student: 
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 10
+Server version: 8.0.31-0ubuntu0.20.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2022, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| Advaitha           |
+| CSE                |
+| DBSQLR180658       |
+| DISTRICTS          |
+| PRANK              |
+| R18_CSE_sec_B      |
+| RGUKT_RKV          |
+| SETOPERATIONS      |
+| SUBQUERY           |
+| W3Schools          |
+| db_connect         |
+| district           |
+| exam               |
+| example            |
+| information        |
+| information_schema |
+| lab                |
+| lab_session        |
+| mysql              |
+| performance_schema |
+| photoshoot         |
+| r                  |
+| registration       |
+| sample             |
+| sys                |
+| vehicle            |
+| webtechnology      |
++--------------------+
+27 rows in set (0.47 sec)
+
+mysql> create database library;
+Query OK, 1 row affected (1.05 sec)
+
+mysql> use library;
+Database changed
+mysql> create table admin(id char(10),admin_name varchar(20),username varchar(20),password varchar(10),email varchar(50),phone char(10));
+Query OK, 0 rows affected (4.97 sec)
+
+mysql> create table student(first varchar(30),last varchar(30),username varchar(30),password varchar(10),email varchar(50),phone char(10));
+Query OK, 0 rows affected (2.24 sec)
+
+
+mysql> create table studrequest(bid int auto_increment, bookname varchar(30),author_name varchar(20),edition int,primary key(bid));
+Query OK, 0 rows affected (2.27 sec)
+
+
+mysql> create table books(bid varchar(5), bookname varchar(35),author varchar(25),edition varchar(7),status varchar(15),quantity int,department varchar(5), prim
+ary key(bid));
+Query OK, 0 rows affected (1.72 sec)
+
+mysql> show tables;
++-------------------+
+| Tables_in_library |
++-------------------+
+| admin             |
+| books             |
+| student           |
+| studrequest       |
++-------------------+
+4 rows in set (0.03 sec)
+
+mysql> create table comment(comment varchar(200));
+Query OK, 0 rows affected (1.53 sec)
+
+mysql> show tables;
++-------------------+
+| Tables_in_library |
++-------------------+
+| admin             |
+| books             |
+| comment           |
+| student           |
+| studrequest       |
++-------------------+
+5 rows in set (0.05 sec)
+
+mysql> desc admin;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| id         | char(10)    | YES  |     | NULL    |       |
+| admin_name | varchar(20) | YES  |     | NULL    |       |
+| username   | varchar(20) | YES  |     | NULL    |       |
+| password   | varchar(10) | YES  |     | NULL    |       |
+| email      | varchar(50) | YES  |     | NULL    |       |
+| phone      | char(10)    | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+6 rows in set (0.56 sec)
+
+mysql> desc student;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| first    | varchar(30) | YES  |     | NULL    |       |
+| last     | varchar(30) | YES  |     | NULL    |       |
+| username | varchar(30) | YES  |     | NULL    |       |
+| password | varchar(10) | YES  |     | NULL    |       |
+| email    | varchar(50) | YES  |     | NULL    |       |
+| phone    | char(10)    | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+6 rows in set (0.01 sec)
+
+mysql> desc studrequest;
++-------------+-------------+------+-----+---------+----------------+
+| Field       | Type        | Null | Key | Default | Extra          |
++-------------+-------------+------+-----+---------+----------------+
+| bid         | int         | NO   | PRI | NULL    | auto_increment |
+| bookname    | varchar(30) | YES  |     | NULL    |                |
+| author_name | varchar(20) | YES  |     | NULL    |                |
+| edition     | int         | YES  |     | NULL    |                |
++-------------+-------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
+
+mysql> desc books;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| bid        | varchar(5)  | NO   | PRI | NULL    |       |
+| bookname   | varchar(35) | YES  |     | NULL    |       |
+| author     | varchar(25) | YES  |     | NULL    |       |
+| edition    | varchar(7)  | YES  |     | NULL    |       |
+| status     | varchar(15) | YES  |     | NULL    |       |
+| quantity   | int         | YES  |     | NULL    |       |
+| department | varchar(5)  | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+
+mysql> desc comment;
++---------+--------------+------+-----+---------+-------+
+| Field   | Type         | Null | Key | Default | Extra |
++---------+--------------+------+-----+---------+-------+
+| comment | varchar(200) | YES  |     | NULL    |       |
++---------+--------------+------+-----+---------+-------+
+1 row in set (0.00 sec)
+
+mysql> 
+
+
+
+mysql> select * from admin;
++--------+------------+----------+----------+----------------+------------+
+| id     | admin_name | username | password | email          | phone      |
++--------+------------+----------+----------+----------------+------------+
+| AD1234 | babu       | babu     | Babu@123 | babu@gmail.com | 7657657654 |
++--------+------------+----------+----------+----------------+------------+
+1 row in set (0.00 sec)
+
+mysql> select * from comment;
++---------+
+| comment |
++---------+
+| good    |
++---------+
+1 row in set (0.00 sec)
+
+mysql> select * from student;
++-------+-------+----------+-----------+-----------------+------------+
+| first | last  | username | password  | email           | phone      |
++-------+-------+----------+-----------+-----------------+------------+
+| mohan | mohan | mohan    | Mohan@123 | mohan@gmail.com | 7894561239 |
++-------+-------+----------+-----------+-----------------+------------+
+1 row in set (0.00 sec)
+
+mysql> select * from books;
++-----+-----------------+--------------+---------+-----------+----------+------------+
+| bid | bookname        | author       | edition | status    | quantity | department |
++-----+-----------------+--------------+---------+-----------+----------+------------+
+| 1   | JAVA            | james        | 3       | available |        5 | cse        |
+| 115 | Machine_Drawing | K.L.NARAYANA | 3       | available |        1 | mech       |
++-----+-----------------+--------------+---------+-----------+----------+------------+
+2 rows in set (0.00 sec)
+
+mysql> select * from studrequest;
++-----+----------+-------------+---------+
+| bid | bookname | author_name | edition |
++-----+----------+-------------+---------+
+|   2 | c        | dennis      |       1 |
++-----+----------+-------------+---------+
+1 row in set (0.00 sec)
+
+mysql> select * from books;
++-----+-----------------+--------------+---------+-----------+----------+------------+
+| bid | bookname        | author       | edition | status    | quantity | department |
++-----+-----------------+--------------+---------+-----------+----------+------------+
+| 1   | JAVA            | james        | 3       | available |        5 | cse        |
+| 115 | Machine_Drawing | K.L.NARAYANA | 3       | available |        1 | mech       |
++-----+-----------------+--------------+---------+-----------+----------+------------+
+2 rows in set (0.00 sec)
+
+mysql> select * from books;
++-----+-----------------+--------------+---------+-----------+----------+------------+
+| bid | bookname        | author       | edition | status    | quantity | department |
++-----+-----------------+--------------+---------+-----------+----------+------------+
+| 1   | JAVA            | james        | 3       | available |        5 | cse        |
+| 115 | Machine_Drawing | K.L.NARAYANA | 3       | available |        1 | mech       |
++-----+-----------------+--------------+---------+-----------+----------+------------+
+2 rows in set (0.00 sec)
+
+
